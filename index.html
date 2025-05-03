@@ -1,5 +1,3 @@
-CODE SAT APR 26 FINAL
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +11,12 @@ CODE SAT APR 26 FINAL
    <style>
     body {
       margin: 0;
+      padding:0;
+      border: 0;
     }
     #big-container {
         background-color: #F29E4C;
-
-
+        padding: 10px;
     }
     
     #container {
@@ -25,27 +24,47 @@ CODE SAT APR 26 FINAL
         vertical-align: top;
         margin: 10px;
         flex-direction: column;
-        justify-content: space-around;
-        /* flex-wrap: wrap; */
-        line-height: 200%;
-
-        
+        flex-wrap: wrap;
+        line-height: 200%; 
     }
 
     #container > div.cards {
             width: 300px;
             height: 300px;
-            border: 5px solid #4d4c4c;
+            border: 5px solid #A4036F;
             border-radius: 50%;
-            padding: 20px;
-            margin: 10px;
+            padding: 25px;
+            margin: 20px;
             background-color: #D9D9D9;
             text-align: center;
-            background-image: url('../GlutenFreeMap/Bagels.jpg');
+            justify-content: center;
+            display:flex;
+            flex-direction:column;
+            line-height: 20px;
             
-        }
-    
+            background-size: cover;
+            background-position: center;
+            /* background-blend-mode: lighten; */
+    }
+    /* .cards p {
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      }
+
+    .cards p:nth-of-type(2) { 
+      padding-left: 30px;   
+      padding-right: 30px; }
+    .cards p:nth-of-type(3) { 
+      padding-left: 40px; 
+      padding-right: 40px; }
+    .cards p:nth-of-type(4) { 
+      padding-left: 50px; 
+      padding-right: 50px; 
+    } */
+
         h1 {
+            margin-top: 0;
             font-family: "Titan One", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -64,10 +83,10 @@ CODE SAT APR 26 FINAL
             font-weight: 400;
             font-style: normal;
             font-size: 2em;
-            line-height: 200%;
             color:  #284B63;
             text-align: center;
-            line-height: 25px;
+            line-height: 30px;
+            padding-top: 45px;
             text-shadow:
                 1px 1px 0 #ffffff,
                 -1px 1px 0 #ffffff,
@@ -84,7 +103,7 @@ CODE SAT APR 26 FINAL
             font-size: 1em;
             color:  #284B63;
             text-align: justify;
-            line-height: 25px;
+            /* line-height: 5px; */
     
         }
 
@@ -101,11 +120,16 @@ CODE SAT APR 26 FINAL
                 -1px 1px 0 #284B63,
                 -1px -1px 0 #284B63,
                 1px -1px 0 #284B63;
-            line-height: 30px;
+            line-height: 0.5px;
             list-style-type: square;            
         }
 
-        #dropdown {
+        a:link {
+           color:#16DB93; 
+          }
+
+/* dropdown section  */
+      .dropbtn {
             background-color: #284B63 ;
             color: white;
             padding: 16px;
@@ -115,31 +139,19 @@ CODE SAT APR 26 FINAL
             border-radius:200%;
             position: relative;
             display: inline-block;
+            text-align: center;
             }
 
 /* Dropdown Content (Hidden by Default) */
         .dropdown-content {
             display: none;
             position: absolute;
-            /* background-color: #f1f1f1; */
             min-width: 160px;
-            /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
             z-index: 1;
             font-family: "Chewy", system-ui;
             font-weight: 400;
             color: #284B63;
         }
-            
-
-        /* Links inside the dropdown */
-        /* .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-family: "Chewy", system-ui;
-            font-weight: 400;
-        } */
 
         /* Change color of dropdown links on hover */
         .dropdown-content :hover {background-color: #ddd; border-radius: 150%;}
@@ -149,6 +161,34 @@ CODE SAT APR 26 FINAL
 
         /* Change the background color of the dropdown button when the dropdown content is shown */
         .dropdown:hover .dropbtn {background-color: #A4036F;}
+    
+ /* food icon button section  */
+        #button-container {
+                margin-bottom: 20px;
+                display: block;
+                float: left;
+
+            }
+        button {
+          padding: 5px;
+          border-radius: 50px;
+          border: none;
+          background-color: #D9D9D9;
+          color:#284B63;
+            }
+        button.hover {
+          background-color: #fff;
+          color: #3C6E71;
+          border: 1px solid #735537;
+          cursor: pointer;
+            }
+          button.clicked {
+                background-color: #284B63;
+                color: #fff;
+                border: 1px solid #fff;
+                cursor: pointer; 
+            }
+          
 
 
     @media (max-width: 600px) {
@@ -176,25 +216,19 @@ CODE SAT APR 26 FINAL
 <body>
     <div id="big-container">
     <h1>New York City Gluten-Free Map</h1>
+<!-- food icon buttons go herer -->
+    <div class = "button-container">
+      <button data-value="Anything!">Anything!</button>
+      <button data-value="Bakery">Bakery</button>
+      <button data-value="Salads">Salads</button>
+      <button data-value="Latin American">Latin American</button>
+      <button data-value="Italian">Italian</button>
+      <button data-value="Asian">Asian</button>
+      <button data-value="African">African</button>
+      <button data-value="American">American</button>  
+    </div>
 
-    <!-- <div class="dropdown">
-        <button class="dropbtn">Neighborhood</button>
-        <div class="dropdown-content">
-          <a href="#">Show All</a>
-          <a href="#">Upper East Side</a>
-          <a href="#">Upper West Side</a>
-          <a href="#">Chelsea</a>
-          <a href="#">East Village</a>
-          <a href="#">Financial District</a>
-          <a href="#">Flatiron</a>
-          <a href="#">Greenwich Village</a>
-          <a href="#">Hell's Kitchen</a>
-          <a href="#">Lower East Side</a>
-          <a href="#">Midtown</a>
-        </div> -->
-      <!-- </div> -->
-
-    <!-- <div class = "dropdown">
+    <div class = "dropdown">
       <button class="dropbtn">Neighborhood</button>
       <div class="dropdown-content">
         <div class="dropdown-item" data-value="Show All">Show All</div>
@@ -210,480 +244,36 @@ CODE SAT APR 26 FINAL
         <div class="dropdown-item" data-value="Lower East Side">Lower East Side</div>
         <div class="dropdown-item" data-value="Hell's Kitchen">Hell's Kitchen</div>
       </div>
-      </div> -->
-      <div class = "dropdown">
-      <select id="dropdown">
-        <option value="Show All">Show All</option>
-        <option value="Upper West Side">Upper West Side</option>
-        <option value="Upper East Side">Upper East Side</option>
-        <option value="Midtown">Midtown</option>
-        <option value="East Village">East Village</option>
-        <option value="Greenwich Village">Greenwich Village</option>
-        <option value="Financial District">Financial District</option>
-        <option value="Chelsea">Chelsea</option>
-        <option value="Union Square">Union Square</option>
-        <option value="Flatiron">Flatiron</option>
-        <option value="Lower East Side">Lower East Side</option>
-        <option value="Hell's Kitchen">Hell's Kitchen</option>
-      </select>
     </div>
 
     <div id ="container">
 
     </div>
+    </div>
     <script>
         
     const df = [
  {
-   "Name": "Kimbap Lab",
-   "Borough": "Manhattan",
-   "Neighborhood": "Chelsea",
-   "Address": "75 9th Ave",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.kimbaplab.com/",
-   "Notes": "Located inside Pearl River Mart Foods in Chelsea Market"
- },
- {
-   "Name": "Modern Bread and Bagel",
-   "Borough": "Manhattan",
-   "Neighborhood": "Chelsea",
-   "Address": "139 West 14th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "Bagel",
-   "Link": "https://www.modernbreadandbagel.com/",
-   "Notes": ""
- },
- {
-   "Name": "Risotteria Melotti",
-   "Borough": "Manhattan",
-   "Neighborhood": "East Village",
-   "Address": "309 East 5th Street",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://www.risotteriamelottinyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "Sushi Counter",
-   "Borough": "Manhattan",
-   "Neighborhood": "East Village",
-   "Address": "523 East 12th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://sushicounternyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Financial District",
-   "Address": "225 Brookfield Place",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Open 7 days"
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Financial District",
-   "Address": "74 Pearl Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Open M-F"
- },
- {
-   "Name": "Spring Burgers and Fries",
-   "Borough": "Manhattan",
-   "Neighborhood": "Financial District",
-   "Address": "74 Pearl Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "Burger",
-   "Link": "https://www.instagram.com/eatspringy/",
-   "Notes": ""
- },
- {
-   "Name": "Twenty one Grains",
-   "Borough": "Manhattan",
-   "Neighborhood": "Financial District",
-   "Address": "100 Pearl St",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "twentyonegrains.com",
-   "Notes": ""
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Flatiron",
-   "Address": "25 East 51 st St",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Open M-F"
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Flatiron",
-   "Address": "38 East 23rd St",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Open 7 days"
- },
- {
-   "Name": "Nami Nori",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "33 Carmine Street",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://naminori.nyc/",
-   "Notes": ""
- },
- {
-   "Name": "Senza Gluten",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "206 Sullivan Street",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://senzaglutennyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "NADAS NYC",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "146 Greenwich Av",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.nadas.nyc/",
-   "Notes": ""
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "90 West 3rd Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Open 7 days"
- },
- {
-   "Name": "Sushi Counter",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "119 Christopher Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://sushicounternyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "PoshPop Bakeshop",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "192 Bleecker Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "https://www.poshpopbakeshop.com/",
-   "Notes": ""
- },
- {
-   "Name": "Senza Gluten Cafe & Bakery",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "171 Sullivan Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "https://senzaglutenbyjemiko.com/",
-   "Notes": ""
- },
- {
-   "Name": "Postcard",
-   "Borough": "Manhattan",
-   "Neighborhood": "Greenwich Village",
-   "Address": "31-33 Carmine Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "postcardbakery.co",
-   "Notes": ""
- },
- {
-   "Name": "Senza Gluten by Jemiko",
-   "Borough": "Manhattan",
-   "Neighborhood": "Hells Kitchen",
-   "Address": "626 10th Avenue",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://senzaglutenbyjemiko.com/",
-   "Notes": ""
- },
- {
-   "Name": "Twenty one Grains",
-   "Borough": "Manhattan",
-   "Neighborhood": "Hells Kitchen",
-   "Address": "1152 W 52nd Strett",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "twentyonegrains.com",
-   "Notes": ""
- },
- {
-   "Name": "Crepe Master",
-   "Borough": "Manhattan",
-   "Neighborhood": "Lower East Side",
-   "Address": "123 East 7th Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "crepemasternyc.com",
-   "Notes": ""
- },
- {
-   "Name": "Rawsome Treats",
-   "Borough": "Manhattan",
-   "Neighborhood": "Lower East Side",
-   "Address": "158 Orchard Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "rawsometreats.co",
-   "Notes": ""
- },
- {
-   "Name": "Bens Fast Food",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "245 West 46th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://bensfastfood.com/",
-   "Notes": ""
- },
- {
-   "Name": "Palmita",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "245 West 46th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.eatpalmita.com/",
-   "Notes": ""
- },
- {
-   "Name": "Springbone",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "104 West 45th St",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "http://springbone.com/",
-   "Notes": "Closed Saturdays"
- },
- {
-   "Name": "The Little Beet",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "135 West 50th St",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.thelittlebeet.com/locations",
-   "Notes": ""
- },
- {
-   "Name": "Umami Express",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "245 West 46th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "Umaniexpress.co",
-   "Notes": ""
- },
- {
-   "Name": "PoshPop Bakeshop",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "315 West 39th Street",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "https://www.poshpopbakeshop.com/",
-   "Notes": ""
- },
- {
-   "Name": "The Little Beet",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown",
-   "Address": "125 Park Avenue",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.thelittlebeet.com/locations",
-   "Notes": ""
- },
- {
-   "Name": "Kati Shop",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "162 East 55th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.katishopnyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "The Little Beet",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "111 W 40th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "",
-   "Notes": ""
- },
- {
-   "Name": "The Little Beet",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "320 Park Av",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.thelittlebeet.com/locations",
-   "Notes": ""
- },
- {
-   "Name": "Modern Bread and Bagel",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "53rd and Lexington Ave",
-   "TypeEst": "Fast Casual",
-   "NYFood": "Bagel",
-   "Link": "https://www.modernbreadandbagel.com/",
-   "Notes": ""
- },
- {
-   "Name": "DùNDú ",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "140 E 41st",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://eatdundu.com/",
-   "Notes": "“The items on our menu do not contain gluten however we are not a dedicated gluten free restaurant. We do receive ingredients from vendors who also frequently handle/supply ingredients that contain gluten. None of our food vendors are dedicated gluten free suppliers.“"
- },
- {
-   "Name": "TAP NYC",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "685 3rd Av",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.eattap.co/",
-   "Notes": ""
- },
- {
-   "Name": "Modern Bread and Bagel",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "Penn Station",
-   "TypeEst": "Fast Casual",
-   "NYFood": "Bagel",
-   "Link": "https://www.modernbreadandbagel.com/",
-   "Notes": ""
- },
- {
-   "Name": "The Little Beet",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "1140 Broadway",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.thelittlebeet.com/locations",
-   "Notes": ""
- },
- {
-   "Name": "Kati Shop",
-   "Borough": "Manhattan",
-   "Neighborhood": "Midtown ",
-   "Address": "104 West 37th Street",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.katishopnyc.com/",
-   "Notes": ""
- },
- {
-   "Name": "Le Botaniste",
-   "Borough": "Manhattan",
-   "Neighborhood": "Upper East Side",
-   "Address": "833 Lexington Avenue",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://lebotaniste.us/",
-   "Notes": ""
- },
- {
    "Name": "Agata & Valentina",
    "Borough": "Manhattan",
    "Neighborhood": "Upper East Side",
-   "Address": "1513 First Avenue at 79th Street",
+   "Address": "1513 First Ave at 79th Street",
    "TypeEst": "Fast Casual",
-   "NYFood": "Bagel",
+   "TypeFood": "Bagel",
+   "Icon": "Bakery",
    "Link": "https://www.agatavalentina.com/",
-   "Notes": ""
+   "Img": "bagels.jpeg"
  },
  {
-   "Name": "The Little Beet",
+   "Name": "Ben&#39;s Fast Food",
    "Borough": "Manhattan",
-   "Neighborhood": "Upper East Side",
-   "Address": "1291 1st Avenue",
+   "Neighborhood": "Midtown",
+   "Address": "245 West 46th Street",
    "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.thelittlebeet.com/locations",
-   "Notes": ""
- },
- {
-   "Name": "By The Way Bakery",
-   "Borough": "Manhattan",
-   "Neighborhood": "Upper East Side",
-   "Address": "1236 Lexington Avenue",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "btwbakery.com",
-   "Notes": ""
-   
- },
- {
-   "Name": "GLACE by NoGlu",
-   "Borough": "Manhattan",
-   "Neighborhood": "Upper East Side",
-   "Address": "1268 Madison Avenue",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "https://noglu.fr/en/new-york/bakery",
-   "Notes": ""
- },
- {
-   "Name": "NoGlu NY",
-   "Borough": "Manhattan",
-   "Neighborhood": "Upper East Side",
-   "Address": "1260 Madison Avenue",
-   "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "http://www.noglu.fr/en/new-york/bakery/",
-   "Notes": ""
- },
- {
-   "Name": "Thyme and Tonic",
-   "Borough": "Manhattan",
-   "Neighborhood": "Upper West Side",
-   "Address": "474 Columbus Avenue",
-   "TypeEst": "Restaurant",
-   "NYFood": "",
-   "Link": "https://www.thymeandtonic.com/",
-   "Notes": ""
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://bensfastfood.com/",
+   "Img": "littlebeet.jpeg"
  },
  {
    "Name": "Birria Landia",
@@ -691,29 +281,32 @@ CODE SAT APR 26 FINAL
    "Neighborhood": "Upper West Side",
    "Address": "Amsterdam & W 70th Street",
    "TypeEst": "Fast Casual",
-   "NYFood": "",
+   "TypeFood": "Mexican",
+   "Icon": "Latin American",
    "Link": "https://birrialandia.com/",
-   "Notes": ""
+   "Img": "birrialandia.jpg"
  },
  {
-   "Name": "Modern Bread and Bagel",
+   "Name": "Bungalow",
    "Borough": "Manhattan",
-   "Neighborhood": "Upper West Side",
-   "Address": "472 Columbus Av.",
-   "TypeEst": "Fast Casual",
-   "NYFood": "Bagel",
-   "Link": "https://www.modernbreadandbagel.com/",
-   "Notes": ""
+   "Neighborhood": "East Village",
+   "Address": "24 First Ave",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Indian ",
+   "Icon": "Asian",
+   "Link": "https://www.bungalowny.com/menu",
+   "Img": "bungalow.png"
  },
  {
-   "Name": "TAP NYC",
+   "Name": "By The Way Bakery",
    "Borough": "Manhattan",
-   "Neighborhood": "Upper West Side",
-   "Address": "267 Columbus Avenue",
-   "TypeEst": "Fast Casual",
-   "NYFood": "",
-   "Link": "https://www.eattap.co/",
-   "Notes": ""
+   "Neighborhood": "Upper East Side",
+   "Address": "1236 Lexington Avenue",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "btwBakery.com",
+   "Img": "bagels.jpeg"
  },
  {
    "Name": "By The Way Bakery",
@@ -721,9 +314,32 @@ CODE SAT APR 26 FINAL
    "Neighborhood": "Upper West Side",
    "Address": "2440 Broadway",
    "TypeEst": "Bakeries and Desserts",
-   "NYFood": "",
-   "Link": "btwbakery.com",
-   "Notes": ""
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "btwBakery.com",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Crepe Master",
+   "Borough": "Manhattan",
+   "Neighborhood": "Lower East Side",
+   "Address": "123 East 7th Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "crepemasternyc.com",
+   "Img": "crepe.jpg"
+ },
+ {
+   "Name": "D&ugrave;ND&uacute;",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "140 E 41st",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Nigerian",
+   "Icon": "African",
+   "Link": "https://eatdundu.com/",
+   "Img": "dundu.jpg"
  },
  {
    "Name": "Doughnut Plant ",
@@ -731,9 +347,10 @@ CODE SAT APR 26 FINAL
    "Neighborhood": "Lower East Side",
    "Address": "379 Grand St., New York, NY 10002",
    "TypeEst": "Bakeries and Desserts",
-   "NYFood": "Doughnut",
+   "TypeFood": "Doughnut",
+   "Icon": "Bakery",
    "Link": "doughnutplant.com",
-   "Notes": ""
+   "Img": "donut.jpg"
  },
  {
    "Name": "Doughnut Plant ",
@@ -741,64 +358,546 @@ CODE SAT APR 26 FINAL
    "Neighborhood": "Midtown",
    "Address": "89 East 42nd Street, New York, NY",
    "TypeEst": "Bakeries and Desserts",
-   "NYFood": "Doughnut",
+   "TypeFood": "Doughnut",
+   "Icon": "Bakery",
    "Link": "doughnutplant.com",
-   "Notes": ""
+   "Img": "donut.jpg"
+ },
+ {
+   "Name": "GLACE by NoGlu",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "1268 Madison Avenue",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "https://noglu.fr/en/new-york/Bakery",
+   "Img": "glace.jpg"
+ },
+ {
+   "Name": "Kati Shop",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "162 East 55th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Thai",
+   "Icon": "Asian",
+   "Link": "https://www.katishopnyc.com/",
+   "Img": "kati.jpg"
+ },
+ {
+   "Name": "Kati Shop",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "104 West 37th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Thai",
+   "Icon": "Asian",
+   "Link": "https://www.katishopnyc.com/",
+   "Img": "kati.jpg"
+ },
+ {
+   "Name": "Kimbap Lab",
+   "Borough": "Manhattan",
+   "Neighborhood": "Chelsea",
+   "Address": "75 9th Ave",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Korean",
+   "Icon": "Asian",
+   "Link": "https://www.kimbaplab.com/",
+   "Img": "korean.jpg"
+ },
+ {
+   "Name": "Le Botaniste",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "833 Lexington Avenue",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Salads",
+   "Icon": "Salads",
+   "Link": "https://lebotaniste.us/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Lilli and Loo",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "785 Lexington Av",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Chinese",
+   "Icon": "Asian",
+   "Link": "https://lilliandloonyc.com/",
+   "Img": "lilliandloo.jpg"
+ },
+ {
+   "Name": "Mission Ceviche",
+   "Borough": "Manhattan",
+   "Neighborhood": "Union Square ",
+   "Address": "7 East 17th street",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Peruvian",
+   "Icon": "Latin American",
+   "Link": "https://missionceviche.com/",
+   "Img": "birrialandia.jpg"
+ },
+ {
+   "Name": "Mission Ceviche",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "1400 2nd Avenue",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Peruvian",
+   "Icon": "Latin American",
+   "Link": "https://missionceviche.com/",
+   "Img": "birrialandia.jpg"
+ },
+ {
+   "Name": "Modern Bread and Bagel",
+   "Borough": "Manhattan",
+   "Neighborhood": "Chelsea",
+   "Address": "139 Wes 14th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Bagel",
+   "Icon": "Bakery",
+   "Link": "https://www.modernbreadandbagel.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Modern Bread and Bagel",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "53rd and Lexington Ave",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Bagel",
+   "Icon": "Bakery",
+   "Link": "https://www.modernbreadandbagel.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Modern Bread and Bagel",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "Penn Station",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Bagel",
+   "Icon": "Bakery",
+   "Link": "https://www.modernbreadandbagel.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Modern Bread and Bagel",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper West Side",
+   "Address": "472 Columbus Av.",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Bagel",
+   "Icon": "Bakery",
+   "Link": "https://www.modernbreadandbagel.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "NADAS NYC",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "146 Greenwich Av",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Colombian",
+   "Icon": "Latin American",
+   "Link": "https://www.nadas.nyc/",
+   "Img": "nadas.jpg"
+ },
+ {
+   "Name": "Nami Nori",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "33 Carmine Street",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Sushi",
+   "Icon": "Asian",
+   "Link": "https://naminori.nyc/",
+   "Img": "naminori.jpg"
+ },
+ {
+   "Name": "NoGlu NY",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "1260 Madison Avenue",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Cafe",
+   "Icon": "Bakery",
+   "Link": "https://www.noglu.nyc/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Palmita",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "245 West 46th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.eatpalmita.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "PoshPop Bakeshop",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "192 Bleecker Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "https://www.poshpopbakeshop.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "PoshPop Bakeshop",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "315 West 39th Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "https://www.poshpopbakeshop.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Postcard",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "31-33 Carmine Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "postcardBakery.co",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Rawsome Treats",
+   "Borough": "Manhattan",
+   "Neighborhood": "Lower East Side",
+   "Address": "158 Orchard Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "rawsometreats.co",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Risotteria Melotti",
+   "Borough": "Manhattan",
+   "Neighborhood": "East Village",
+   "Address": "309 East 5th st",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Italian",
+   "Icon": "Italian",
+   "Link": "https://www.risotteriamelottinyc.com/",
+   "Img": "risotto.jpg"
+ },
+ {
+   "Name": "Senza Gluten",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "206 Sullivan Street",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Italian",
+   "Icon": "Italian",
+   "Link": "https://senzaglutennyc.com/",
+   "Img": "italian.jpg"
+ },
+ {
+   "Name": "Senza Gluten by Jemiko",
+   "Borough": "Manhattan",
+   "Neighborhood": "Hell's Kitchen",
+   "Address": "626 10th Avenue",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Italian",
+   "Icon": "Italian",
+   "Link": "https://senzaglutenbyjemiko.com/",
+   "Img": "italian.jpg"
+ },
+ {
+   "Name": "Senza Gluten Cafe & Bakery",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "171 Sullivan Street",
+   "TypeEst": "Bakeries and Desserts",
+   "TypeFood": "Desserts",
+   "Icon": "Bakery",
+   "Link": "https://senzaglutenbyjemiko.com/",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Spring Burgers and Fries",
+   "Borough": "Manhattan",
+   "Neighborhood": "Financial District",
+   "Address": "74 Pearl Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Burgers",
+   "Icon": "American",
+   "Link": "https://www.instagram.com/eatspringy/",
+   "Img": "burger.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Financial District",
+   "Address": "225 Brookfield Place",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Financial District",
+   "Address": "74 Pearl Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Flatiron",
+   "Address": "25 East 51 st St",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Flatiron",
+   "Address": "38 East 23rd St",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "90 West 3rd Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Springbone",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "104 West 45th St",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "http://springbone.com/",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Sushi Counter",
+   "Borough": "Manhattan",
+   "Neighborhood": "East Village",
+   "Address": "523 East 12th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Sushi",
+   "Icon": "Asian",
+   "Link": "https://sushicounternyc.com/",
+   "Img": "NamiNori.jpg"
+ },
+ {
+   "Name": "Sushi Counter",
+   "Borough": "Manhattan",
+   "Neighborhood": "Greenwich Village",
+   "Address": "119 Christopher Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Sushi",
+   "Icon": "Asian",
+   "Link": "https://sushicounternyc.com/",
+   "Img": "NamiNori.jpg"
+ },
+ {
+   "Name": "TAP NYC",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "685 3rd Av",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Brazilian",
+   "Icon": "Latin American",
+   "Link": "https://www.eattap.co/",
+   "Img": "birrialandia.jpg"
+ },
+ {
+   "Name": "TAP NYC",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper West Side",
+   "Address": "267 Columbus Avenue bt 72 and 73rd ",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Brazilian ",
+   "Icon": "Latin American",
+   "Link": "https://www.eattap.co/",
+   "Img": "birrialandia.jpg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "135 West 50th St",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "125 Park Avenue",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "111 W 40th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "320 Park Av",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown ",
+   "Address": "1140 Broadway",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "The Little Beet",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper East Side",
+   "Address": "1291 1st Avenue",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://www.thelittlebeet.com/locations",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Thyme and Tonic",
+   "Borough": "Manhattan",
+   "Neighborhood": "Upper West Side",
+   "Address": "474 Columbus Avenue",
+   "TypeEst": "Restaurant",
+   "TypeFood": "American",
+   "Icon": "American",
+   "Link": "https://www.thymeandtonic.com/",
+   "Img": "burger.jpeg"
+ },
+ {
+   "Name": "TLK-Tigerlilly Kitchen",
+   "Borough": "Manhattan",
+   "Neighborhood": "East Village",
+   "Address": "125 Canal St ",
+   "TypeEst": "Restaurant ",
+   "TypeFood": "Asian",
+   "Icon": "Asian",
+   "Link": "https://www.tlk-nyc.com/",
+   "Img": "lilliandloo.jpg"
+ },
+ {
+   "Name": "Twenty one Grains",
+   "Borough": "Manhattan",
+   "Neighborhood": "Financial District",
+   "Address": "100 Pearl St",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Cafe",
+   "Icon": "Bakery",
+   "Link": "https://twentyonegrains.com",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Twenty one Grains",
+   "Borough": "Manhattan",
+   "Neighborhood": "Hell's Kitchen",
+   "Address": "1152 W 52nd Strett",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Cafe ",
+   "Icon": "Bakery",
+   "Link": "https://twentyonegrains.com",
+   "Img": "bagels.jpeg"
+ },
+ {
+   "Name": "Umami Express",
+   "Borough": "Manhattan",
+   "Neighborhood": "Midtown",
+   "Address": "245 West 46th Street",
+   "TypeEst": "Fast Casual",
+   "TypeFood": "Salads and Bowls",
+   "Icon": "Salads",
+   "Link": "https://Umamiexpress.co",
+   "Img": "littlebeet.jpeg"
+ },
+ {
+   "Name": "Wild",
+   "Borough": "Manhattan ",
+   "Neighborhood": "West Village",
+   "Address": "535 Hudson St",
+   "TypeEst": "Restaurant",
+   "TypeFood": "Italian",
+   "Icon": "Italian",
+   "Link": "https://eatdrinkwild.com/",
+   "Img": "italian.jpg"
  }
-]; 
-
-  // const container = document.getElementById('container');
-  // const dropdown = document.querySelector('.dropdown-content');
-
-  // function displayCards(cards){
-  //   container.innerHTML = '';
-  //   cards.forEach(card => {
-  //     let elementDiv = document.createElement('div');
-  //     elementDiv.classList.add('cards');
-  //     elementDiv.innerHTML = `
-  //     <h2><b>${card.Name}</b></h2>
-  //     <p>In ${card.Address}</p>
-  //     <a href= "${card.Link}" target="blank">Website</a>
-  //     `;
-  //     container.append(elementDiv);
-  //   });
-  // }
-
-  // displayCards(df);
-
-  // const dropdown=document.querySelector('.dropdown-content');
-  // dropdown.addEventListener('click', (e)=> {
-  //   if (e.target.matches('.dropdown-item')){
-  //     const selected = e.target.dataset.value; 
-
-  //     if (selected === 'Show All'){
-  //       displayCards(df);
-  //     }
-  //     else {const filtered = df.filter(item => {
-  //       return item.Neighborhood.toLowerCase().includes(selected.toLowerCase());
-
-  //     });
-  //     displayCards(filtered);
-
-  //     }
-  //   }
-  // });
+]
 
     let container = document.getElementById('container');
 
-    function makeCards(name, nbh, address, type, link) {
+    function makeCards(name, nbh, address, food, link, img, icon) {
         
         let elementDiv = document.createElement('div');
 
         elementDiv.classList.add('cards')
+        elementDiv.style.backgroundImage = `url('../img/${img}')`;
         
         let name_txt = `<b>${name}</b>`;
         
-        let nbh_txt = `In <b>${nbh}</b>`;
+        let nbh_txt = `<b>${nbh}</b>`;
         
         let address_txt = `${address}`;
 
-        let type_txt = `${type}`;
+        let food_txt = `${food}`;
 
         let link_txt = `<a href = "${link}" target = "_blank">Website</a>`;
 
@@ -806,132 +905,95 @@ CODE SAT APR 26 FINAL
         <h2>${name_txt}</h2>
         <p>${nbh_txt}</p>
         <p>${address_txt}</p>
-        <p>${type_txt}</p>
+        <p>${food_txt}</p>
         <p>${link_txt}</p>
         `;
-        
+
         elementDiv.innerHTML = cardText;
-        
-        if (nbh == "Upper West Side") {
-          elementDiv.setAttribute('data-nbh', "Upper West Side");
-        }
-        else if (nbh == "Upper East Side") {
-          elementDiv.setAttribute('data-nbh', "Upper East Side");
-        }
-        else if (nbh == "Midtown") {
-          elementDiv.setAttribute('data-nbh', "Midtown");
-        }
-        else if (nbh == "East Village") {
-          elementDiv.setAttribute('data-nbh', "East Village");
-        }
-        else if (nbh == "Greenwich Village") {
-          elementDiv.setAttribute('data-nbh', "Greenwich Village");
-        }
-        else if (nbh == "Financial District") {
-          elementDiv.setAttribute('data-nbh', "Financial District");
-        }
-        else if (nbh == "Chelsea") {
-          elementDiv.setAttribute('data-nbh', "Chelsea");
-        }
-        else if (nbh == "Union Square") {
-          elementDiv.setAttribute('data-nbh', "Union Square");
-        } 
-        else if (nbh == "Flatiron") {
-          elementDiv.setAttribute('data-nbh', "Flatiron");
-        } 
-        else if (nbh == "Lower East Side") {
-          elementDiv.setAttribute('data-nbh', "Lower East Side");
-        }
-        else if (nbh == "Hell's Kitchen") {
-          elementDiv.setAttribute('data-nbh', "Hell's Kitchen");
-        }
+
+        // let image = <img src="hurricane_damage.jpg">
+
+        elementDiv.setAttribute('data-nbh', nbh);
+        elementDiv.setAttribute('data-icon', icon);
     
         container.append(elementDiv);
         }
+    
 
     df.forEach(function(c){
-        makeCards(c.Name, c.Neighborhood, c.Address, c.TypeEst, c.Link);
+        makeCards(c.Name, c.Neighborhood, c.Address, c.TypeFood, c.Link, c.Img, c.Icon);
     });
-
-  let dropdown = document.getElementById('dropdown');
-  let cards = document.querySelectorAll('.cards');
-  let currentNBHFilter = 'Show All';
+  
+  // let dropdown = document.querySelector('.dropdown');
+    let allButtons = document.querySelectorAll('button');
+    let cards = document.querySelectorAll('.cards');
+  // let currentNBHFilter = 'Show All';
+    let currentNBHFilter = 'all-nbh';
+    let currentFoodFilter = 'all-icon';
 
 // filter function
   function filterCards() {
+    cards = document.querySelectorAll('.cards'); // refresh list
     cards.forEach(card => {
-        if (currentNBHFilter === 'Show All' || card.getAttribute('data-nbh') === currentNBHFilter) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+      const matchesNeighborhood = currentNBHFilter === 'all-nbh' || card.getAttribute('data-nbh').trim() === currentNBHFilter;
+      const matchesIcon = currentFoodFilter === 'all-icon' || card.getAttribute('data-icon').trim() === currentFoodFilter;
+      card.style.display = (matchesNeighborhood && matchesIcon) ? 'block' : 'none';
     });
   }
 
-// dropdown change event
-  dropdown.addEventListener('change', function() {
-    currentNBHFilter = this.value;
+// neighborhood filter (dropdown)
+document.querySelectorAll('.dropdown .dropdown-item').forEach(item => {
+  item.addEventListener('click', function () {
+    currentNBHFilter = this.getAttribute('data-value') === "Show All" ? 'all-nbh' : this.getAttribute('data-value');
     filterCards();
   });
+});
 
-// you had unfinished/stray event listeners below, fixing them:
+// food type filter (buttons)
+document.querySelectorAll('.button-container button').forEach(button => {
+  button.addEventListener('click', function () {
+    currentFoodFilter = this.getAttribute('data-value') === "Anything!" ? 'all-icon' : this.getAttribute('data-value');
+    filterCards();
+  });
+});
+
+// show message if there are no results // 
+// function filterCards() {
+//   cards = document.querySelectorAll('.cards'); // refresh
+//   let visibleCount = 0;
+
+//   cards.forEach(card => {
+//     const matchesNeighborhood = currentNBHFilter === 'all-nbh' || card.getAttribute('data-nbh').trim() === currentNBHFilter;
+//     const matchesIcon = currentFoodFilter === 'all-icon' || card.getAttribute('data-icon').trim() === currentFoodFilter;
+//     const isMatch = matchesNeighborhood && matchesIcon;
+
+//     card.style.display = isMatch ? 'block' : 'none';
+//     if (isMatch) visibleCount++;
+//   });
+
+//   let msg = document.getElementById('no-results-msg');
+//   if (!msg) {
+//     msg = document.createElement('p');
+//     msg.id = 'no-results-msg';
+//     msg.textContent = 'No results match your filters.';
+//     msg.style.color = '#284B63';
+//     msg.style.fontFamily = 'Chewy, system-ui';
+//     msg.style.fontSize = '1.5em';
+//     msg.style.textAlign = 'center';
+//     container.appendChild(msg);
+//   }
+
+//   msg.style.display = (visibleCount === 0) ? 'block' : 'none';
+// }
+
+  let dropdown = document.querySelector('.dropdown');
   dropdown.addEventListener('mouseleave', function() {
     this.classList.remove('hover');
   });
-
   dropdown.addEventListener('click', function() {
     this.classList.add('clicked');
   });
-            // } else if (this.dataset.type == 'money'){
-            //     currentMoneyFilter = this.value;
-            // }
-    
-
-    //         cards.forEach(card => {
-    //             let nbhValue = card.getAttribute('data-nbh');
-    //             // let moneyValue = card.getAttribute('data-money');
-
-    //         if (currentNBHFilter == 'all-nbh' && currentMoneyFilter == 'all-money'){
-    //             card.style.display = 'block';
-    //         }
-    //         else if (currentShareFilter == 'all-share' && moneyValue == currentMoneyFilter){
-    //             card.style.display = 'block';
-    //         }
-    //         else if (shareValue == currentShareFilter && currentMoneyFilter == 'all-money'){
-    //             card.style.display = 'block';
-    //         }
-
-    //         else if (shareValue == currentShareFilter && moneyValue == currentMoneyFilter ){
-    //             card.style.display = 'block';
-    //         }
-   
-    //         else {
-    //             card.style.display = 'none';
-    //     }
-    // });
-    // });
-
-    //     card.getAttribute('data-nbh') || currentShareFilter == 'all-nbh') {
-    //         // allButtons.forEach(btn => btn.classList.remove('clicked'));
-    //         // this.classList.add('clicked');
-    //             card.style.display = 'block'; 
-    //         } 
-          
-
-        // filterCards();
-    
-    // document.getElementById('all').classList.remove('clicked');
-
-// function filterCards() {
-//     let allCards = document.querySelectorAll('#container > .cards');
-
-//     allCards.forEach(function(card) {
-//         let tags = (card.getAttribute('data-card') || "").split(" ");
-
-//         // Show card if it matches ALL active filters
-//         let show = activeFilters.every(f => tags.includes(f)) || activeFilters.length === 0;
-
-//         card.style.display = show ? 'block' : 'none';
+           
   ;
 
     </script>
